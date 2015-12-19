@@ -4,7 +4,7 @@
 
 ###Licensing
 
-This is youth research project.
+This is a youth research project.
 Until the competition ends, this project isn't licensed.
 
 ###Compatibility
