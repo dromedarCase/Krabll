@@ -1,24 +1,25 @@
 # Krabll
 
-##General Information
+## General Information
 
-###Licensing
+### Licensing
 
-This is a youth research project.
-Until the competition ends, this project isn't licensed.
+This is a research project for the 'Jugend-Forscht' science fair.
+This project will presumably get an open license on completion of said fair.
 
-###Compatibility
+### Compatibility
 
-Until now, this project is only compatible with Windows, Mac OS X and Linux.
+The project requires JRE>=7 for a successfull execution.
+It's being tested on Windows 8, 10 as well as a handfull of GNU/Linux distributions.
 
-###Required Libraries and Programs
+### Included Libraries and Programs
 
 * [https://www.java.com/]
 * [https://libgdx.badlogicgames.com/index.html]
 * [http://gradle.org/]
 * [http://box2d.org/]
 
-###Project Structure
+### Project Structure
 
 The major source code is located in the "core" directory.
-The "desktop" folder only contains the launcher class (inclusive `public static void main(String[] args)`).
+The "desktop" folder only contains the launcher class (including the `main()` class).
