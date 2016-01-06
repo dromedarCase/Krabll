@@ -9,15 +9,15 @@ This project will presumably get an open license on completion of said fair.
 
 ### Compatibility
 
-The project requires JRE>=7 for a successfull execution.
-It's being tested on Windows 8, 10 as well as a handfull of GNU/Linux distributions.
+The project requires JRE >= 8 for a successful execution.
+It's being tested on Windows 8 and 10, as well as on a handful of GNU/Linux distributions.
 
 ### Included Libraries and Programs
 
-* [https://www.java.com/]
-* [https://libgdx.badlogicgames.com/index.html]
-* [http://gradle.org/]
-* [http://box2d.org/]
+* [Java 8 SE](https://www.java.com/)
+* [LibGDX](https://libgdx.badlogicgames.com/index.html)
+* [Gradle](http://gradle.org/)
+* [Box2D](http://box2d.org/)
 
 ### Project Structure
 
