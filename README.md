@@ -22,4 +22,4 @@ It's being tested on Windows 8 and 10, as well as on a handful of GNU/Linux dist
 ### Project Structure
 
 The major source code is located in the "core" directory.
-The "desktop" folder only contains the launcher class (including the `main()` class).
+The "desktop" folder only contains the launcher class (including the `main()` method).
