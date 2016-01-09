@@ -2,15 +2,17 @@ package org.jufo.krabll;
 
 
 public class Selector {
+    Krabll[] krablls;
+    
     public Selector(){  // TODO: write selecting/generating algorithm
-        Network network = new Network();
-        Krabll krabll = new Krabll(network);
+        
+    }
+    
+    public Network randomNetwork(){ // TODO: write algorithm for randomized networks
+        return network;
     }
     
     public Network mixNetworks(Network[] networks){ //TODO: write mixing algorithm
-        // for illustration only {
-        Network network = new Network();
-        // }
         return network;
     }
 }
