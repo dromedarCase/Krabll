@@ -6,9 +6,9 @@ public class Neuron {
     int[] connectedInputs;
     int[] connectedOutputs;
     
-    public Neuron(int thres, int[] conIn, int[] conOut){
-        threshold = thres;
-        connectedInputs = conIn;
-        connectedOutputs = conOut;
+    public Neuron(int threshold, int[] connectedInputs, int[] connectedOutputs){
+        this.threshold = threshold;
+        this.connectedInputs = connectedInputs;
+        this.connectedOutputs = connectedOutputs;
     }
 }

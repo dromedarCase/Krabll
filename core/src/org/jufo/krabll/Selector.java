@@ -8,6 +8,7 @@ public class Selector {
         
     }
     
+    /*
     public Network randomNetwork(){ // TODO: write algorithm for randomized networks
         return network;
     }
@@ -15,4 +16,5 @@ public class Selector {
     public Network mixNetworks(Network[] networks){ //TODO: write mixing algorithm
         return network;
     }
+    */
 }

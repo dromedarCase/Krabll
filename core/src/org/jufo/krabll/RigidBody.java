@@ -6,9 +6,9 @@ public class RigidBody {
     int yCoordinate;
     short rotation;
     
-    public RigidBody(int x, int y, short rot){
-        xCoordinate = x;
-        yCoordinate = y;
-        rotation = rot;
+    public RigidBody(int xCoordinate, int yCoordinate, short rotation){
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+        this.rotation = rotation;
     }
 }

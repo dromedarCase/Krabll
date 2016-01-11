@@ -2,9 +2,11 @@ package org.jufo.krabll;
 
 
 public class Krabll extends RigidBody { // TODO: write input/output methods
-    Network network;
+    private Network network;
     
-    public Krabll(Network net){	// TODO: fix heredity bug
-        network = net;
+    public Krabll(int xCoordinate, int yCoordinate,
+                  short rotation, Network network){ // TODO: fix heredity bug
+        super(xCoordinate, yCoordinate, rotation);
+        this.network = network;
     }
 }
