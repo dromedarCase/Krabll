@@ -6,7 +6,7 @@ public class Neuron {
     int[] connectedInputs;
     int[] connectedOutputs;
     
-    public Neuron(int thres, int[] con, int[] conOut){
+    public Neuron(int thres, int[] conIn, int[] conOut){
         threshold = thres;
         connectedInputs = conIn;
         connectedOutputs = conOut;
