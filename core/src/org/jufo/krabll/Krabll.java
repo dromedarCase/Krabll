@@ -11,11 +11,13 @@ public class Krabll extends RigidBody {
     }
     
     // TODO: recognizing inputs
+    // applies inputs
     public void applyInputs(){
         
     }
     
     // TODO: performing outputs
+    // performs outputs
     public void performOutputs(){
         
     }
