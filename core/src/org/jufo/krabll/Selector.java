@@ -9,10 +9,14 @@ public class Selector {
         
     }
     
+    // TODO: generate links randomly
     public Network randomNetwork(){
-        boolean[] inputs = null;    // TODO: set inputs
-        boolean[] outputs = null;   // TODO: set outputs
-        Neuron[] neurons = null;    // TODO: set neurons
+        boolean[] inputs = new boolean[14];
+        boolean[] outputs = new boolean[14];
+        Neuron[] neurons = new Neuron[28];
+        for(int a = 0; a < neurons.length; a++){
+            neurons[a].threshold = (int) (Math.random() * 14 + 1);
+        }
         Network network = new Network(inputs, neurons, outputs);
         return network;
     }
