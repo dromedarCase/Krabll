@@ -3,18 +3,36 @@ package org.jufo.krabll;
 
 public class RigidBody {
     // position, rotation as well as mass and speed for momentum
-    double xCoordinate;
-    double yCoordinate;
+    int xCoordinate;
+    int yCoordinate;
     short rotation;
     double mass;
-    double speed;   // coefficient (shouldn't be 0)
+    double speed;   // coefficient
     
-    public RigidBody(double xCoordinate, double yCoordinate, short rotation,
+    // constructor
+    public RigidBody(int xCoordinate, int yCoordinate, short rotation,
                      double mass, double speed){
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         this.rotation = rotation;
         this.mass = mass;
         this.speed = speed;
+    }
+    
+    // getter and setter
+    public int getXCoordinate(){
+        return xCoordinate;
+    }
+    public int getYCoordinate(){
+        return yCoordinate;
+    }
+    public int getRotation(){
+        return rotation;
+    }
+    public double getMass(){
+        return mass;
+    }
+    public double getSpeed(){
+        return speed;
     }
 }

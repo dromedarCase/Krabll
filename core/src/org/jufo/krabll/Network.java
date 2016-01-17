@@ -3,14 +3,26 @@ package org.jufo.krabll;
 
 public class Network {
     // binary inputs, neurons and outputs
-    boolean[] inputs;
-    Neuron[] neurons;
-    boolean[] outputs;
+    private boolean[] inputs;
+    private Neuron[] neurons;
+    private boolean[] outputs;
     
+    // constructor
     public Network(boolean[] inputs, Neuron[] neurons, boolean[] outputs){
         this.inputs = inputs;
         this.neurons = neurons;
         this.outputs = outputs;
+    }
+    
+    // getter and setter
+    public boolean[] getInputs(){
+        return inputs;
+    }
+    public Neuron[] getNeurons(){
+        return neurons;
+    }
+    public boolean[] getOutputs(){
+        return outputs;
     }
     
     // sets the neurons
@@ -19,10 +31,10 @@ public class Network {
                 a < neurons.length;
                 a++){
             for(int b = 0;
-                    b < neurons[a].connectedInputs.length;
+                    b < neurons[a].getConnectedInputs().length;
                     b++){
                 if(inputs[b]){
-                    neurons[a].activatedInputs++;
+                    neurons[a].setActivatedInputs(neurons[a].getActivatedInputs() + 1);
                 }
             }
         }
@@ -33,9 +45,9 @@ public class Network {
         for(int a = 0;
                 a < neurons.length;
                 a++){
-            if(neurons[a].activatedInputs == neurons[a].threshold){
+            if(neurons[a].getActivatedInputs() == neurons[a].getTreshold()){
                 for(int b = 0;
-                        b < neurons[a].connectedOutputs.length;
+                        b < neurons[a].getConnectedOutputs().length;
                         b++){
                     outputs[b] = true;
                 }
@@ -53,7 +65,7 @@ public class Network {
         for(int a = 0;
                 a < neurons.length;
                 a++){
-            neurons[a].activatedInputs = 0;
+            neurons[a].setActivatedInputs(0);
         }
         for(int a = 0;
                 a < outputs.length;

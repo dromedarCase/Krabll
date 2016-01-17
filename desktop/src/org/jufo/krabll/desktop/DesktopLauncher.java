@@ -7,6 +7,9 @@ import org.jufo.krabll.Main;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new Main(), config);
+		config.title = Main.getTITLE();
+                config.height = Main.getHEIGTHINUNITS() * Main.getPIXELSPERUNIT();
+                config.width = Main.getWIDTHINUNITS() * Main.getPIXELSPERUNIT();
+                new LwjglApplication(new Main(), config);
 	}
 }

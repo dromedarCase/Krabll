@@ -2,12 +2,18 @@ package org.jufo.krabll;
 
 
 public class Krabll extends RigidBody {
-    Network network;
+    private Network network;
     
+    // constructor
     public Krabll(int xCoordinate, int yCoordinate,
                   short rotation, double mass, double speed, Network network){
         super(xCoordinate, yCoordinate, rotation, mass, speed);
         this.network = network;
+    }
+    
+    // getter and setter
+    public Network getNetwork(){
+        return network;
     }
     
     // TODO: recognizing inputs
