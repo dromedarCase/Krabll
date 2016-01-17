@@ -4,7 +4,8 @@ package org.jufo.krabll;
 public class Selector {
     Krabll[] krablls;
     
-    public Selector(){  // TODO: write selecting/generating algorithm
+    // TODO: write selecting/generating algorithm
+    public Selector(){
         
     }
     
@@ -17,7 +18,8 @@ public class Selector {
     }
     
     /*
-    public Network mixNetworks(Network[] networks){ //TODO: write mixing algorithm
+    //TODO: write mixing algorithm
+    public Network mixNetworks(Network[] networks){
         return network;
     }
     */

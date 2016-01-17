@@ -2,29 +2,19 @@ package org.jufo.krabll;
 
 
 public class RigidBody {
-    //position on the plane
+    // position, rotation as well as mass and speed for momentum
     double xCoordinate;
     double yCoordinate;
     short rotation;
+    double mass;
+    double speed;   // coefficient (shouldn't be 0)
     
-    //movement and collision handling
-    int mass;
-    double speed;
-    double length;
-    
-    public RigidBody(double xCoordinate, double yCoordinate, short rotation){
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
-        this.rotation = rotation;
-        this.mass = 0;
-        this.speed = 0;
-    }
-    
-    public RigidBody(double xCoordinate, double yCoordinate, short rotation, int mass){
+    public RigidBody(double xCoordinate, double yCoordinate, short rotation,
+                     double mass, double speed){
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         this.rotation = rotation;
         this.mass = mass;
-        this.speed = 0;
+        this.speed = speed;
     }
 }

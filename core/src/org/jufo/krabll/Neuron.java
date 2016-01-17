@@ -2,6 +2,8 @@ package org.jufo.krabll;
 
 
 public class Neuron {
+    // threshold, activatedInputs, connectedInputs and connectedOutputs for
+    // network operations
     int threshold;
     int activatedInputs;
     int[] connectedInputs;
