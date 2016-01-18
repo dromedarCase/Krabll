@@ -8,25 +8,25 @@ public class Network {
     private boolean[] outputs;
     
     // constructor
-    public Network(boolean[] inputs, Neuron[] neurons, boolean[] outputs){
+    public Network(boolean[] inputs, Neuron[] neurons, boolean[] outputs) {
         this.inputs = inputs;
         this.neurons = neurons;
         this.outputs = outputs;
     }
     
     // getter and setter
-    public boolean[] getInputs(){
+    public boolean[] getInputs() {
         return inputs;
     }
-    public Neuron[] getNeurons(){
+    public Neuron[] getNeurons() {
         return neurons;
     }
-    public boolean[] getOutputs(){
+    public boolean[] getOutputs() {
         return outputs;
     }
     
     // sets the neurons
-    public void setNeurons(){
+    public void setNeurons() {
         for(int a = 0;
                 a < neurons.length;
                 a++){
@@ -41,7 +41,7 @@ public class Network {
     }
     
     // sets the outputs
-    public void setOutputs(){
+    public void setOutputs() {
         for(int a = 0;
                 a < neurons.length;
                 a++){
@@ -56,7 +56,7 @@ public class Network {
     }
     
     // resets the whole network
-    public void reset(){
+    public void reset() {
         for(int a = 0;
                 a < inputs.length;
                 a++){
