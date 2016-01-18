@@ -5,12 +5,15 @@ public class Krabll extends RigidBody {
     // neural network
     private Network network;
     
+    int lifetime;
+    
     // constructor
     public Krabll(int xCoordinate, int yCoordinate,
                   short rotation, double mass,
                   double speed, Network network){
         super(xCoordinate, yCoordinate, rotation, mass, speed);
         this.network = network;
+        lifetime = 0;
     }
     
     // getter and setter
@@ -26,5 +29,6 @@ public class Krabll extends RigidBody {
     // performs outputs
     public void performOutputs() {
         // TODO: check network.getOutputs();
+        lifetime++;
     }
 }
