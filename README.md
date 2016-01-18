@@ -32,6 +32,8 @@ It's being tested on Windows 8 and 10, as well as on a handful of GNU/Linux dist
 The actual source code is located in the "core" directory.
 The "desktop" folder only contains the launcher class (including the `main()` method).
 
+## Contact
+
 ### IRC
 
 You can contact us via IRC on "Foonetic" (channel: #krabll).
