@@ -26,4 +26,4 @@ The "desktop" folder only contains the launcher class (including the `main()` me
 
 ### IRC
 
-Our IRC channel is `#krabll` on Foonetic.
+You can contact us via IRC on "Foonetic" (channel: #krabll).
