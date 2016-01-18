@@ -7,7 +7,8 @@ public class RigidBody {
     int yCoordinate;
     short rotation;
     double mass;
-    double speed;   // coefficient
+    // coefficient (normally 1)
+    double speed;
     
     // constructor
     public RigidBody(int xCoordinate, int yCoordinate, short rotation,

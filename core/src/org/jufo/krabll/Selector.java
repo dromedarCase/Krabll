@@ -2,32 +2,62 @@ package org.jufo.krabll;
 
 
 public class Selector {
-    private Krabll[] krablls;
-    final static int eliteSize = 10;
+    // population and elite
+    private final int populationSize = 100;
+    private final int eliteSize = 10;
+    private Krabll[] population;
+    private Krabll[] elite;
     
-    // TODO: write selecting/generating algorithm
     // constructor
-    public Selector(Krabll[] krablls) {
-        this.krablls = krablls;
+    public Selector() {
+        this.population = new Krabll[populationSize];
+        this.elite = new Krabll[eliteSize];
     }
     
-    // creates a new set of krablls
-   /* Krabll[] execute() {
-        Krabll[] selectedKrablls = select();
-        return mixNetworks(selectedKrablls);
-    }*/
+    // getter and setter
+    public Krabll[] getPopulation(){
+        return population;
+    }
+    public Krabll[] getElite(){
+        return elite;
+    }
     
-    // selects the krablls to form the new generation
-    Krabll[] select() {
-        Array.sort(krablls);
+    // creates first generation of population
+    public void createPopulation(){
         
-        Krabll[] survivors = new Krabll[eliteSize]();
-        for (int i = 0; i <= eliteSize; i++) {
-            survivors[i] = krablls[krablls.length - (i + 1)];
+    }
+    
+    // loops through the whole population, checks inputs and sets outputs
+    public void checkPopulation(){
+        if(!(population.length <= eliteSize)){
+            for(int a = 0; a < population.length; a++){
+                population[a].applyInputs();
+                if(!population[a].getNetwork().getInputs()[0]){
+                    // TODO: delete this krabll from population array
+                }
+            }
+            for(int a = 0; a < population.length; a++){
+                population[a].performOutputs();
+            }
+        }
+        else {
+            // TODO: copy the last 10 krablls to elite array
+            Network eliteNetwork = findEliteNetwork();
+            // TODO: create new population based on eliteNetwork
+            // TODO: clear elite array
         }
     }
     
-    // TODO: generate links randomly
+    // returns the mixed networks of the elite
+    Network findEliteNetwork() {
+        Network[] eliteNetworks = new Network[eliteSize];
+        for(int a = 0; a < eliteSize; a++){
+            eliteNetworks[a] = elite[a].getNetwork();
+        }
+        Network network = mixNetworks(eliteNetworks);
+        return network;
+    }
+    
     // generates a random neural network
     Network randomNetwork() {
         boolean[] inputs = new boolean[14];
@@ -36,15 +66,14 @@ public class Selector {
         for(int a = 0; a < neurons.length; a++){
             neurons[a].setThreshold((int) (Math.random() * 14 + 1));
         }
+        // TODO: generate links randomly
         Network network = new Network(inputs, neurons, outputs);
         return network;
     }
     
-    /*
-    // TODO: write mixing algorithm
     // mixes multiple neural networks
-    Krabll[] mixNetworks(Krabll[] networks){
-        return networks;
+    Network mixNetworks(Network[] networks){
+        // TODO: write mixing algorithm
+        return networks[0];
     }
-    */
 }

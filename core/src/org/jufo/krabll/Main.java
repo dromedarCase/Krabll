@@ -49,14 +49,16 @@ public class Main extends ApplicationAdapter {
         krabllOn = new Texture(Gdx.files.internal("krabll_on.png"));
         // initialize camera
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, WIDTHINUNITS * PIXELSPERUNIT, HEIGHTINUNITS * PIXELSPERUNIT);
+        camera.setToOrtho(false, WIDTHINUNITS * PIXELSPERUNIT,
+                          HEIGHTINUNITS * PIXELSPERUNIT);
         // initialize sprite batch
         batch = new SpriteBatch();
     }
     
-    // render loop
+    // main loop
     @Override
     public void render() {
-
+        selector.checkPopulation();
+        // TODO: render everything
     }
 }
