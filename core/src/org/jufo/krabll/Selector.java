@@ -32,9 +32,6 @@ public class Selector {
         if(!(population.length <= eliteSize)){
             for(int a = 0; a < population.length; a++){
                 population[a].applyInputs();
-                if(!population[a].getNetwork().getInputs()[0]){
-                    // TODO: delete this krabll from population array
-                }
             }
             for(int a = 0; a < population.length; a++){
                 population[a].performOutputs();

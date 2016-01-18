@@ -18,6 +18,9 @@ public class Network {
     public boolean[] getInputs() {
         return inputs;
     }
+    public void setInputs(boolean[] inputs){
+        this.inputs = inputs;
+    }
     public Neuron[] getNeurons() {
         return neurons;
     }
