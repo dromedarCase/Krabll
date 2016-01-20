@@ -33,13 +33,13 @@ public class Neuron {
     public int[] getConnectedInputs(){
         return connectedInputs;
     }
-    public void setConnectedInputs(int[] connectedInputs){
-        this.connectedInputs = connectedInputs;
+    public void setConnectedInputs(int index, int value){
+        this.connectedInputs[index] = value;
     }
     public int[] getConnectedOutputs(){
         return connectedOutputs;
     }
-    public void setConnectedOutputs(int[] connectedOutputs){
-        this.connectedOutputs = connectedOutputs;
+    public void setConnectedOutputs(int index, int value){
+        this.connectedOutputs[index] = value;
     }
 }

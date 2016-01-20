@@ -22,28 +22,38 @@ public class Selector {
         return elite;
     }
     
-    // creates first generation of population
+    // creates first (random) generation of population
     public void createPopulation(){
-        
+        for(int a = 0; a < populationSize; a++){
+            int xCoordinate = (int) (Math.random() * Main.WIDTHINUNITS + 1);
+            int yCoordinate = (int) (Math.random() * Main.HEIGHTINUNITS + 1);
+            short rotation = (short) (((short) (Math.random() * 8 + 1)) * 45);
+            double mass = 10.0D;
+            double speed = 1.0D;
+            Network network = randomNetwork();
+            int health = 100;
+            population[a] = new Krabll(xCoordinate, yCoordinate, rotation,
+                                       mass, speed, network, health);
+        }
     }
     
     // loops through the whole population, checks inputs and sets outputs
     public void checkPopulation(){
-        if(!(population.length <= eliteSize)){
-            for(int a = 0; a < population.length; a++){
+        if(!(populationSize <= eliteSize)){
+            for(int a = 0; a < populationSize; a++){
                 population[a].applyInputs();
             }
-            for(int a = 0; a < population.length; a++){
+            for(int a = 0; a < populationSize; a++){
                 population[a].performOutputs();
             }
         }
         else {
             //copy the elite krablls to elite array
-            int eliteIndex = 0;
-            for (int i = 0; i < populationSize; i++)
-                if (!population[i].isAlive())
-                    elite[eliteIndex++] = population[i];
-            
+            for(int a = 0; a < populationSize; a++){
+                if(population[a].getNetwork().getInputs()[0]){
+                    elite[a] = population[a];
+                }
+            }
             Network eliteNetwork = findEliteNetwork();
             // TODO: create new population based on eliteNetwork
             // TODO: clear new population array

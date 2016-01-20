@@ -25,12 +25,13 @@ public class Krabll extends RigidBody {
     public void setHealth(int health) {
         this.health = health;
     }
-    public boolean isAlive() {
-        return health > 0;
-    }
     
     // checks and applies inputs
     public void applyInputs() {
+        // checks if Krabll is alive
+        if(health <= 0){
+            network.setInputs(0, false);
+        }
         // TODO: recognizing inputs
     }
     
