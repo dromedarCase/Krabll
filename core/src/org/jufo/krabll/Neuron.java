@@ -1,12 +1,15 @@
 package org.jufo.krabll;
 
 
+// Neuron inherits from Object
 public class Neuron {
-    // threshold, activatedInputs, connectedInputs and connectedOutputs for
-    // network operations
+    // threshold (value, that must be "reached", to "enable" the neuron)
     private int threshold;
+    // number of activated inputs
     private int activatedInputs;
+    // index of every connected input
     private int[] connectedInputs;
+    // inex of every connected output
     private int[] connectedOutputs;
     
     // constructor

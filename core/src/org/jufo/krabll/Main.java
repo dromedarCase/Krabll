@@ -7,20 +7,21 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
+// Main inherits from ApplicationAdapter (for rendering, etc.)
 public class Main extends ApplicationAdapter {
-    // project-wide attributes (title, height, etc)
+    // title, window height, window width, etc. (for displaying the UI)
     final static String TITLE = "Krabll";
     final static int PIXELSPERUNIT = 5;
     final static int HEIGHTINUNITS = 100;
     final static int WIDTHINUNITS = 100;
     final static int TICKSPERSECOND = 10;
-    // selector
-    Selector selector;
-    // textures, camera and sprite batch
+    // textures, camera and sprite batch (for rendering every krabll)
     private Texture krabllOff;
     private Texture krabllOn;
     private OrthographicCamera camera;
     private SpriteBatch batch;
+    // selector for handling the entire krabll population
+    Selector selector;
     
     // constructor
     public Main() {
@@ -41,23 +42,24 @@ public class Main extends ApplicationAdapter {
         return TITLE;
     }
     
-    // on-create method
+    // create method of the window
     @Override
     public void create() {
-        // load textures
+        // initializing textures
         krabllOff = new Texture(Gdx.files.internal("krabll_off.png"));
         krabllOn = new Texture(Gdx.files.internal("krabll_on.png"));
-        // initialize camera
         camera = new OrthographicCamera();
+        // setting camera angle
         camera.setToOrtho(false, WIDTHINUNITS * PIXELSPERUNIT,
                           HEIGHTINUNITS * PIXELSPERUNIT);
-        // initialize sprite batch
+        // initializing spritebatch (for "drawing")
         batch = new SpriteBatch();
     }
     
-    // main loop
+    // render method of the window (should run about 60 times per second)
     @Override
     public void render() {
+        // checking every input of every krabll in population
         selector.checkPopulation();
         // TODO: render everything
     }

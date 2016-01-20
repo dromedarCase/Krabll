@@ -1,9 +1,11 @@
 package org.jufo.krabll;
 
 
+// Krabll inherits from RigidBody (for physics, etc.)
 public class Krabll extends RigidBody {
-    // neural network
+    // neural network ("brain")
     private Network network;
+    // health (for damage recognition, etc.)
     private int health;
     
     // constructor
@@ -26,16 +28,16 @@ public class Krabll extends RigidBody {
         this.health = health;
     }
     
-    // checks and applies inputs
+    // recognizing inputs and applying them to the neural network
     public void applyInputs() {
-        // checks if Krabll is alive
+        // check, if krabll is dead
         if(health <= 0){
             network.setInputs(0, false);
         }
-        // TODO: recognizing inputs
+        // TODO: recognizing other inputs
     }
     
-    // performs outputs
+    // reading binary outputs from neural network and performing them
     public void performOutputs() {
         // TODO: check network.getOutputs();
     }

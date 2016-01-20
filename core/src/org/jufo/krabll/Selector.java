@@ -1,10 +1,14 @@
 package org.jufo.krabll;
 
 
+// Selector inherits from Object
 public class Selector {
-    // population and elite
+    // population size and elite size (for finding "best" neural network)
     private final int populationSize = 100;
     private final int eliteSize = 10;
+    // krablls that are currently alive
+    private int krabllsAlive;
+    // population and elite array (for storing every krabll)
     private Krabll[] population;
     private Krabll[] elite;
     
@@ -22,70 +26,109 @@ public class Selector {
         return elite;
     }
     
-    // creates first (random) generation of population
+    // create a randomly generated population with the size of populationSize
     public void createPopulation(){
+        // sets the number of krablls, that are alive to the population size
+        krabllsAlive = populationSize;
+        // loop through populationSize
         for(int a = 0; a < populationSize; a++){
+            // initializing random xCoordinate and yCoordinate
             int xCoordinate = (int) (Math.random() * Main.WIDTHINUNITS + 1);
             int yCoordinate = (int) (Math.random() * Main.HEIGHTINUNITS + 1);
+            // initializing random rotation
             short rotation = (short) (((short) (Math.random() * 8 + 1)) * 45);
+            // initializing mass and speed (for momentum and damage calculation)
             double mass = 10.0D;
             double speed = 1.0D;
+            // initializing random neural network
             Network network = randomNetwork();
+            // initializing health (for damage calculation)
             int health = 100;
+            // initializing krabll
             population[a] = new Krabll(xCoordinate, yCoordinate, rotation,
                                        mass, speed, network, health);
         }
     }
     
-    // loops through the whole population, checks inputs and sets outputs
+    // check, apply and perform every input and output
+    // for each krabll in population
     public void checkPopulation(){
-        if(!(populationSize <= eliteSize)){
+        // TODO: delete "dead" krablls
+        // check, if there aren't just 10 or less krablls alive
+        if(!(krabllsAlive <= eliteSize)){
+            // loop through every krabll of the current population
             for(int a = 0; a < populationSize; a++){
+                // check and apply inputs for specific krabll
                 population[a].applyInputs();
             }
+            // loop through every krabll of the current population
             for(int a = 0; a < populationSize; a++){
+                // set neurons of spicific neural network
+                population[a].getNetwork().setNeurons();
+            }
+            // loop through every krabll of the current population
+            for(int a = 0; a < populationSize; a++){
+                // set binary outputs of specific neural network
+                population[a].getNetwork().setOutputs();
+            }
+            // loop through each krabll of the curren population
+            for(int a = 0; a < populationSize; a++){
+                // performs the outputs for specific krabll
                 population[a].performOutputs();
             }
         }
+        // create new population based on "top 10" neural networks
         else {
-            //copy the elite krablls to elite array
+            // loop through every krabll of the current population
             for(int a = 0; a < populationSize; a++){
+                // check, if specific krabll is alive
                 if(population[a].getNetwork().getInputs()[0]){
+                    // copy specific krabll into elite array
                     elite[a] = population[a];
                 }
             }
+            // create new neural network based on "top 10" neural networks
             Network eliteNetwork = findEliteNetwork();
             // TODO: create new population based on eliteNetwork
-            // TODO: clear new population array
         }
     }
     
-    // returns the mixed networks of the elite
+    // returns mixed neural network of "top 10" krablls (in elite array)
     Network findEliteNetwork() {
+        // create new network array
         Network[] eliteNetworks = new Network[eliteSize];
+        // loop through elite array
         for(int a = 0; a < eliteSize; a++){
             eliteNetworks[a] = elite[a].getNetwork();
         }
+        // mix networks of elite
         Network network = mixNetworks(eliteNetworks);
+        // return elite network
         return network;
     }
     
-    // generates a random neural network
+    // generate a random neural network
     Network randomNetwork() {
+        // initialize input, neuron and output array
         boolean[] inputs = new boolean[14];
-        boolean[] outputs = new boolean[14];
         Neuron[] neurons = new Neuron[28];
+        boolean[] outputs = new boolean[14];
+        // loop through every neuron in neuron array
         for(int a = 0; a < neurons.length; a++){
+            // set a random neuron threshold
             neurons[a].setThreshold((int) (Math.random() * 14 + 1));
         }
         // TODO: generate links randomly
+        // initialize new neural network
         Network network = new Network(inputs, neurons, outputs);
+        // return random neural network
         return network;
     }
     
-    // mixes multiple neural networks
+    // mix different neural network
     Network mixNetworks(Network[] networks){
         // TODO: write mixing algorithm
+        // return mixed neural network
         return null;
     }
 }
