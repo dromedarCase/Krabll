@@ -38,10 +38,15 @@ public class Selector {
             }
         }
         else {
-            // TODO: copy the last 10 krablls to elite array
+            //copy the elite krablls to elite array
+            int eliteIndex = 0;
+            for (int i = 0; i < populationSize; i++)
+                if (!population[i].isAlive())
+                    elite[eliteIndex++] = population[i];
+            
             Network eliteNetwork = findEliteNetwork();
             // TODO: create new population based on eliteNetwork
-            // TODO: clear elite array
+            // TODO: clear new population array
         }
     }
     
@@ -71,6 +76,6 @@ public class Selector {
     // mixes multiple neural networks
     Network mixNetworks(Network[] networks){
         // TODO: write mixing algorithm
-        return networks[0];
+        return null;
     }
 }

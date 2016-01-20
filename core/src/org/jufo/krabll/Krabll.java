@@ -16,23 +16,26 @@ public class Krabll extends RigidBody {
     }
     
     // getter and setter
-    public Network getNetwork(){
+    public Network getNetwork() {
         return network;
     }
-    public int getHealth(){
+    public int getHealth() {
         return health;
     }
-    public void setHealth(int health){
+    public void setHealth(int health) {
         this.health = health;
+    }
+    public boolean isAlive() {
+        return health > 0;
     }
     
     // checks and applies inputs
-    public void applyInputs(){
+    public void applyInputs() {
         // TODO: recognizing inputs
     }
     
     // performs outputs
-    public void performOutputs(){
+    public void performOutputs() {
         // TODO: check network.getOutputs();
     }
 }
