@@ -12,8 +12,8 @@ Please click [here](https://en.wikipedia.org/wiki/Genetic_algorithm), to learn m
 
 ### Licensing
 
-This is a research project for the 'Jugend-Forscht' science fair.
-This project will presumably get an open license on completion of said fair.
+This is a research project for a science fair, called "Jugend-Forscht".
+This project will presumably get licensed under "GPL Version 3", when the competition ends.
 
 ### Compatibility
 
