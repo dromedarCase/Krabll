@@ -37,5 +37,4 @@ The "desktop" folder only contains the launcher class (including the `main()` me
 
 ### IRC
 
-You can contact us via IRC on "Freenode" (channel: #krabll).
-Every commit is announced there by the way...
+You can contact us via IRC on #krabll (Freenode).
