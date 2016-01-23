@@ -90,5 +90,4 @@ public class Network {
             outputs[a] = false;
         }
     }
-    
 }

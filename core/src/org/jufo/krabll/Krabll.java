@@ -30,7 +30,7 @@ public class Krabll extends RigidBody {
     
     // recognizing inputs and applying them to the neural network
     public void applyInputs() {
-        // check, if krabll is dead
+        // check, wether krabll is dead
         if(health <= 0){
             network.setInputs(0, false);
         }
