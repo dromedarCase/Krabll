@@ -16,6 +16,7 @@ public class Selector {
     public Selector() {
         this.population = new Krabll[populationSize];
         this.elite = new Krabll[eliteSize];
+        createPopulation();
     }
     
     // getter and setter
@@ -27,7 +28,7 @@ public class Selector {
     }
     
     // create a randomly generated population with the size of populationSize
-    public void createPopulation(){
+    void createPopulation(){
         // sets the number of krablls, that are alive to the population size
         krabllsAlive = populationSize;
         // loop through populationSize
@@ -109,19 +110,36 @@ public class Selector {
     
     // generate a random neural network
     Network randomNetwork() {
-        // initialize input, neuron and output array
-        boolean[] inputs = new boolean[14];
-        Neuron[] neurons = new Neuron[28];
-        boolean[] outputs = new boolean[14];
-        // loop through every neuron in neuron array
+        // initialize constants like numberOfInputs, numberOfNeurons, numberOfOutputs
+        final int numberOfInputs = 14;
+        final int numberOfNeurons = 28;
+        final int numberOfOutputs = 14;
+        // declare input, neuron and output array
+        boolean[] inputs = new boolean[numberOfInputs];
+        Neuron[] neurons = new Neuron[numberOfNeurons];
+        boolean[] outputs = new boolean[numberOfOutputs];
+        // initialize every neuron in neuron array
         for(int a = 0; a < neurons.length; a++){
-            // set a random neuron threshold
-            neurons[a].setThreshold((int) (Math.random() * 14 + 1));
+            // initialize random threshold of neuron
+            int threshold = (int) (Math.random() * Math.max(numberOfInputs,
+                                                            numberOfOutputs) + 1);
+            // declare connectedInputs and connectedOutputs of neuron
+            int[] connectedInputs = new int[numberOfInputs];
+            int[] connectedOutputs = new int[numberOfOutputs];
+            // initialize every connected input of the neuron
+            for(int b = 0; b < connectedInputs.length; b++){
+                connectedInputs[b] = (int) (Math.random() * numberOfInputs + 1);
+            }
+            // initialize every connected output of the neuron
+            for(int b = 0; b < connectedOutputs.length; b++){
+                connectedOutputs[b] = (int) (Math.random() * numberOfOutputs + 1);
+            }
+            // initialize new neuron
+            neurons[a] = new Neuron(threshold, connectedInputs, connectedOutputs);
         }
-        // TODO: generate links randomly
         // initialize new neural network
         Network network = new Network(inputs, neurons, outputs);
-        // return random neural network
+        // return randomly generated neural network
         return network;
     }
     

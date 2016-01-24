@@ -60,7 +60,7 @@ public class Main extends ApplicationAdapter {
     @Override
     public void render() {
         // checking every input of every krabll in population
-        selector.checkPopulation();
+        // selector.checkPopulation();
         // TODO: render everything
     }
 }
