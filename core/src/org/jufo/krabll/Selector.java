@@ -20,6 +20,15 @@ public class Selector {
     }
     
     // getter and setter
+    public int getPopulationSize(){
+        return populationSize;
+    }
+    public int getEliteSize(){
+        return eliteSize;
+    }
+    public int getKrabllsAlive(){
+        return krabllsAlive;
+    }
     public Krabll[] getPopulation(){
         return population;
     }
@@ -33,6 +42,7 @@ public class Selector {
         krabllsAlive = populationSize;
         // loop through populationSize
         for(int a = 0; a < populationSize; a++){
+            // TODO: optimize spawning algorithm
             // initializing random xCoordinate and yCoordinate
             int xCoordinate = (int) (Math.random() * Main.WIDTHINUNITS + 1);
             int yCoordinate = (int) (Math.random() * Main.HEIGHTINUNITS + 1);
@@ -116,6 +126,8 @@ public class Selector {
         final int numberOfOutputs = 14;
         // declare input, neuron and output array
         boolean[] inputs = new boolean[numberOfInputs];
+        // set "alive" input to "true"
+        inputs[0] = true;
         Neuron[] neurons = new Neuron[numberOfNeurons];
         boolean[] outputs = new boolean[numberOfOutputs];
         // initialize every neuron in neuron array

@@ -27,6 +27,12 @@ public class Krabll extends RigidBody {
     public void setHealth(int health) {
         this.health = health;
     }
+    public int getWidth(){
+        return width;
+    }
+    public int getHeight(){
+        return height;
+    }
     
     // recognizing inputs and applying them to the neural network
     public void applyInputs() {

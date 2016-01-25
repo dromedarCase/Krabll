@@ -3,10 +3,12 @@ package org.jufo.krabll;
 
 // RigidBody inherits from Object
 public class RigidBody {
-    // xCoordinate, yCoordinate, rotation,
+    // xCoordinate, yCoordinate, width, height, rotation,
     // mass and speed (for physics and rendering)
     int xCoordinate;
     int yCoordinate;
+    int width;
+    int height;
     short rotation;
     double mass;
     double speed;
