@@ -9,10 +9,12 @@ public class Krabll extends RigidBody {
     private int health;
     
     // constructor
-    public Krabll(int xCoordinate, int yCoordinate,
-                  short rotation, double mass,
-                  double speed, Network network, int health){
-        super(xCoordinate, yCoordinate, rotation, mass, speed);
+    public Krabll(int width, int height,
+                  int xCoordinate, int yCoordinate,
+                  int rotation,
+                  double mass, double speed,
+                  Network network, int health){
+        super(width, height, xCoordinate, yCoordinate, rotation, mass, speed);
         this.network = network;
         this.health = health;
     }

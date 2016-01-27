@@ -42,10 +42,24 @@ public class Selector {
         krabllsAlive = populationSize;
         // loop through populationSize
         for(int a = 0; a < populationSize; a++){
-            // TODO: optimize spawning algorithm
-            // initializing random xCoordinate and yCoordinate
+            // TODO: optimize spawning algorithm and fix error
+            // initializing width and height
+            int width = 4;
+            int height = 1;
+            // initializing random x coordinate
             int xCoordinate = (int) (Math.random() * Main.WIDTHINUNITS + 1);
+            // check, if x coordinate is to big
+            if(xCoordinate > (Main.WIDTHINUNITS - width)){
+                // set x coordinate to maximum
+                xCoordinate = Main.WIDTHINUNITS;
+            }
+            // initializing random y coordinate
             int yCoordinate = (int) (Math.random() * Main.HEIGHTINUNITS + 1);
+            // check, if y coordinate is to big
+            if(yCoordinate > (Main.HEIGHTINUNITS - height)){
+                // set y coordinate to maximum
+                yCoordinate = Main.HEIGHTINUNITS;
+            }
             // initializing random rotation
             short rotation = (short) (((short) (Math.random() * 8 + 1)) * 45);
             // initializing mass and speed (for momentum and damage calculation)
@@ -56,8 +70,12 @@ public class Selector {
             // initializing health (for damage calculation)
             int health = 100;
             // initializing krabll
-            population[a] = new Krabll(xCoordinate, yCoordinate, rotation,
-                                       mass, speed, network, health);
+            population[a] = new Krabll(xCoordinate, yCoordinate,
+                                       width, height,
+                                       rotation,
+                                       mass, speed,
+                                       network,
+                                       health);
         }
     }
     

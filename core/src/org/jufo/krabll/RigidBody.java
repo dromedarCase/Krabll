@@ -3,19 +3,23 @@ package org.jufo.krabll;
 
 // RigidBody inherits from Object
 public class RigidBody {
-    // xCoordinate, yCoordinate, width, height, rotation,
+    // width, height, xCoordinate, yCoordinate, rotation,
     // mass and speed (for physics and rendering)
+    final int width;
+    final int height;
     int xCoordinate;
     int yCoordinate;
-    int width;
-    int height;
-    short rotation;
+    int rotation;
     double mass;
     double speed;
     
     // constructor
-    public RigidBody(int xCoordinate, int yCoordinate, short rotation,
+    public RigidBody(int width, int height,
+                     int xCoordinate, int yCoordinate,
+                     int rotation,
                      double mass, double speed){
+        this.width = width;
+        this.height = height;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         this.rotation = rotation;
@@ -24,6 +28,12 @@ public class RigidBody {
     }
     
     // getter and setter
+    public int getWidth(){
+        return width;
+    }
+    public int getHeight(){
+        return height;
+    }
     public int getXCoordinate(){
         return xCoordinate;
     }
